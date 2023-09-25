@@ -4,7 +4,7 @@ let movies = []
  
 async function getMovieData(data) {
     const response = await fetch(data)
-     = [ await response.json()]
+    temp = [ await response.json()]
         renderEmployee(employeeStore)
 } 
 
