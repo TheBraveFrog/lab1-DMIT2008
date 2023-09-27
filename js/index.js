@@ -19,7 +19,7 @@ function renderMovie (films){
        
        })
 
-       document.querySelector('#film').append(container)
+       document.querySelector('#films').append(container)
 
 
 }
