@@ -3,25 +3,24 @@ import { movieTemplate } from "./template"
 let movies = []
  
 async function getMovieData(data) {
-    const response = await fetch(data)
-    temp = [ await response.json()]
-        renderEmployee(employeeStore)
+    const response = await fetch(data) 
+    movies = [ ... await response.json()] 
+        renderMovie(movies)
 } 
 
-getEmployeeData('/db/employees.json')
+getMovieData('/data/movie_data.json')
  
 
-// Layout Thrashing
-function renderEmployee (employees){
-    // container is in memory
-    // return elem is in memory
+function renderMovie (films){
     const container = document.createElement('div')
     
-       employees.forEach((employee)=>{
-         container.append(employeeTemplate(employee))
+       films.forEach((movie)=>{
+         container.append(movieTemplate(movie))
        
        })
 
-       document.querySelector('#cards').append(container)
+       document.querySelector('#films').append(container)
+
 
 }
+
